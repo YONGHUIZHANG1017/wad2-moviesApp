@@ -6,7 +6,7 @@ import { Link, Route, withRouter } from "react-router-dom"
 import MovieReviews from "../components/movieReviews"
 const MoviePage = props => {
   const { id } = props.match.params;
-  const [movie, setMovie] = useState(null);
+  const [movie] = useMovie(id)
   useEffect(() => {
     getMovie(id).then(movie => {
       setMovie(movie);
