@@ -34,10 +34,6 @@ bundle_app:
   artifacts:
     paths:
       - build/
-
- 
-
-
 e2etest:    
     stage: test
     before_script:
@@ -62,10 +58,10 @@ test_jobX:
   script:
     - echo "test job X"
 
-exercise_job:
+exercise_jobZ:
    stage: exercise
    only:
     - master
-   scipt:
-    - echo "build job exercise on master work"
+   script:
+    - echo "exercise job Z on master works"
    
