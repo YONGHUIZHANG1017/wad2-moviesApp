@@ -10,6 +10,7 @@ import SiteHeader from './components/siteHeader'
 import UpcomingMoviesPage from"./pages/upcomingPage"
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
+import AddMovieReviewPage from './pages/addMovieReviewPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ const App = () => {
 
         </ul>
         <Switch>
+        <Route exact path="/reviews/form" component={AddMovieReviewPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
