@@ -4,15 +4,15 @@ import {MoviesContext} from "../../contexts/moviesContext";
 const AddToWatchListButton = ({ movie }) => {
   const context = useContext(MoviesContext);
 
-  const handleAddToMovieList = e => {
+  const handleAddToWatchList = e => {
     e.preventDefault();
-    context.addToFavorites(movie.id);
+    context.addToWatchList(movie.id);
   };
   return (
     <button
       type="button"
       className="btn w-100 btn-primary"
-      onClick={handleAddToMovieList}
+      onClick={handleAddToWatchList}
     >
       Add To WatchList
     </button>
