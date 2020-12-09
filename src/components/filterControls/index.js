@@ -1,42 +1,40 @@
 import React, { useContext } from "react";
 import "./filterControls.css";
-import { GenresContext } from '../../contexts/genresContext' 
+import {Select,Input} from 'antd';
+import { GenresContext } from '../../contexts/genresContext'
 
 const FilterControls = props => {
   const context = useContext(GenresContext);
 
-  const handleChange = (e, type, value) => {
-    e.preventDefault();
+  const handleChange = (type, value) => {
     props.onUserInput(type, value);
   };
   const handleTextChange = e => {
-    handleChange(e, "name", e.target.value);
+    handleChange("name", e.target.value);
   };
-  const handleGenreChange = e => {
-    handleChange(e, "genre", e.target.value);
+  const handleGenreChange = value => {
+    handleChange("genre", value);
   };
 
   return (
-    <div className="row bg-warning">
+    <div className="row movie-control">
       <div className="col-md-12">
-        <h4>
           <span>List Filtering:</span>
-          <input
-            type="text"
+          <Input
+            style={{width:200}}
             placeholder="Title Search"
             onChange={handleTextChange}
           />
-          <span>Genre:</span>
-          <select id="genre" onChange={handleGenreChange}>
+          <span style={{marginLeft:14}}>Genre:</span>
+          <Select id="genre" style={{width:200}} onChange={handleGenreChange}>
             {context.genres.map(genre => {
               return (
-                <option key={genre.id} value={genre.id}>
+                <Select.Option key={genre.id} value={genre.id}>
                   {genre.name}
-                </option>
+                </Select.Option>
               );
             })}
-          </select>
-        </h4>
+          </Select>
       </div>
     </div>
   );

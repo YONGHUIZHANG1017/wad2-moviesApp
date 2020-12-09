@@ -3,3 +3,6 @@
   margin-top: 0px;
   background-color: white;
 }
+.image-gallery img {
+  height: 50vh;
+}

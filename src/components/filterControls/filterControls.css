@@ -1,10 +1,17 @@
 h4 {
-    padding-top: 5px;
-  }
-  span {
-    margin-right: 10px;
-  }
-  
-  input {
-    margin-right: 100px;
-  }
+  padding-top: 5px;
+}
+
+span {
+  margin-right: 10px;
+}
+
+input {
+  margin-right: 100px;
+}
+.movie-control{
+  background-color: #343a40 ;
+  line-height: 50px;
+  color: white;
+  font-size: 16px;
+}

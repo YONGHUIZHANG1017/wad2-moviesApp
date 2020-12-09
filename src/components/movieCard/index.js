@@ -1,53 +1,41 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import {Card} from 'antd';
 import "./movieCard.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../globals/fontawesome";
-import { Link } from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const MovieCard = (props) => {
-
-  const handleAddToFavorites = e => {
-    e.preventDefault()
-    props.buttonHandler(props.movie.id)  // new line
-  }
+const MovieCard = ({movie, action}) => {
 
   return (
-    <div className="col-sm-3">
-      
-      <div className="card  bg-white">
-      <Link to={`/movies/${props.movie.id}`}>
-      <img
-      className="card-img-tag center "
-      alt={props.movie.title}
-      src={
-        props.movie.poster_path
-          ? `https://image.tmdb.org/t/p/w500/${props.movie.poster_path}`
-          : "./film-poster-placeholder.png"
-      }
-      />
-     
+    <div className="col-sm-3" style={{marginBottom: 10}}>
+      <Link to={`/movies/${movie.id}`}>
+        <Card className='movie-card' hoverable cover={<img
+          alt={movie.title}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+              : "./film-poster-placeholder.png"
+          }
+        />}>
+          <Card.Meta
+            style={{padding:16}}
+            title={movie.title}
+                     description={<>
+                       {movie.release_date}
+                       <div style={{float: 'right'}}>
+                         <FontAwesomeIcon icon={["fas", "star"]}/>
+                         <span> {movie.vote_average}</span>
+                       </div>
+                     </>}/>
+          <div className="card-footer">
+            {action(movie)}
+          </div>
+        </Card>
       </Link>
-        <div className="card-body">
-          <h4 className="card-title ">{props.movie.title}</h4>
-          <p>
-            <FontAwesomeIcon icon={["fas", "calendar"]} />
-            <span> {props.movie.release_date}</span>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.movie.vote_average}</span>
-          </p>
-        </div>
-        <div className="card-footer">
-        <button type="button" className="btn w-100 btn-primary"
-                onClick={handleAddToFavorites}
-                >
-            Add to Favorites
-          </button>
-        </div>
-      </div>
+
     </div>
   );
-        }
+};
 
-export default MovieCard ;
+export default MovieCard;
