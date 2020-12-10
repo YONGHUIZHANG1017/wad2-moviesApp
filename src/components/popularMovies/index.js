@@ -13,6 +13,7 @@ export default () => {
     }))))
   }, [])
   return <div className='image-gallery'>
+    POPULAR MOVIE
     <ImageGallery items={movies} showThumbnails={false} autoPlay/>
   </div>;
 };

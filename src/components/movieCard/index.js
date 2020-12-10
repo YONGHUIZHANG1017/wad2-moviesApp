@@ -6,7 +6,6 @@ import "../../globals/fontawesome";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const MovieCard = ({movie, action}) => {
-
   return (
     <div className="col-sm-3" style={{marginBottom: 10}}>
       <Link to={`/movies/${movie.id}`}>
@@ -19,18 +18,18 @@ const MovieCard = ({movie, action}) => {
           }
         />}>
           <Card.Meta
-            style={{padding:16}}
+            style={{padding: 16}}
             title={movie.title}
-                     description={<>
-                       {movie.release_date}
-                       <div style={{float: 'right'}}>
-                         <FontAwesomeIcon icon={["fas", "star"]}/>
-                         <span> {movie.vote_average}</span>
-                       </div>
-                     </>}/>
-          <div className="card-footer">
+            description={<>
+              {movie.release_date}
+              <div style={{float: 'right'}}>
+                <FontAwesomeIcon icon={["fas", "star"]}/>
+                <span> {movie.vote_average}</span>
+              </div>
+            </>}/>
+          {action && <div className="card-footer">
             {action(movie)}
-          </div>
+          </div>}
         </Card>
       </Link>
 
