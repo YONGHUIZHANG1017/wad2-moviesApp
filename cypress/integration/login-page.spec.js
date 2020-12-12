@@ -31,7 +31,7 @@ describe("Login Page ", () => {
       cy.get("#root > div > div > div > div > input").type('maxcheung5259')
       cy.get("#root > div > div > div > div > span > input").type('19991017zyh')
       cy.get("#root > div > div > div > div > button").click()
-      cy.wait(5000)
+      cy.wait(50000)
       cy.url().should('not.include','/login')
     })
   })
