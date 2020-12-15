@@ -46,15 +46,14 @@ e2etest:
 build_jobX:
   stage: build
   only:
-    - demobranch
+    - staging
   script:
-    - echo "build job X on demoBranch works"
+    - echo "build job X on staging works"
 
 test_jobX:
   stage: test
   only:
-    - master
-    - demobranch2
+    - staging
   script:
     - echo "test job X"
 
@@ -64,4 +63,5 @@ exercise_jobZ:
     - master
    script:
     - echo "exercise job Z on master works"
+
    

@@ -11,7 +11,11 @@ import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
-
+import SearchMovies from "../src/pages/searchPage";
+import Login from "../src/pages/loginPage";
+import UpcomingMovies from "../src/pages/upcomingPage";
+import PopularMovies from "../src/components/popularMovies";
+import {message, Input, Button} from 'antd';
 const sample = {
   adult: false,
   backdrop_path: "/5Iw7zQTHVRBOYpA0V6z0yypOPZh.jpg",
@@ -142,7 +146,9 @@ storiesOf("Home Page/MovieList", module)
       />
     );
   });
-
+storiesOf("Home Page/popular movies", module).add("default", () => (
+    <PopularMovies movie={sample} />
+  ));
 storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
   <MovieDetails movie={sample} />
 ));
@@ -152,3 +158,29 @@ storiesOf("Movie Details Page/MovieHeader", module)
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
   .add("default", () => <MovieHeader movie={sample} />);
+  storiesOf("Search Page/searchMovies", module).add("default", () => (
+    <SearchMovies  placeholder={'search movie'}/>
+    
+  ));
+  storiesOf("Login Page/login", module)
+      .add("default", () => (
+      <Login
+        placeholder={'username'}
+        placeholder={'password'}
+      />
+      ));
+  storiesOf("Upcoming Page/upcoming movies", module)
+    .addDecorator(story => (
+      <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+    ))
+    .add("default", () => {
+      const movies = [sample, sample];
+      return (
+        <UpcomingMovies
+          movies={movies}
+          action={movie => (
+            <button className="btn w-100 btn-primary">Add to favorite</button>
+          )}
+        />
+      );
+          })
