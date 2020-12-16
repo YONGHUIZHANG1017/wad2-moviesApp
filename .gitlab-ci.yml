@@ -5,7 +5,6 @@ image: cypress/browsers:node12.0.0-chrome73
 stages:
   - install
   - build
-  - exercise
   - test
 
 variables:
@@ -42,26 +41,3 @@ e2etest:
     script:
        # start the server in the background
       - npm run start:ci
-
-build_jobX:
-  stage: build
-  only:
-    - staging
-  script:
-    - echo "build job X on staging works"
-
-test_jobX:
-  stage: test
-  only:
-    - staging
-  script:
-    - echo "test job X"
-
-exercise_jobZ:
-   stage: exercise
-   only:
-    - master
-   script:
-    - echo "exercise job Z on master works"
-
-   
