@@ -29,36 +29,33 @@ npm install
 ![][stories]
 
 ### UI Design.
-
-
+![][Header]
+> Show homepage header
+![][Homepage]
+> Show HomePage and changed ui
 ![][LOGIN1]
->Shows Login funtion. Clicking the 'Login to Show Reviews' button will display login page.
+> Shows Login funtion. Clicking the 'Login to Show Reviews' button will display login page.
 ![][LOGIN2]
->Clicking the 'LOGIN' button if username and password are correct,it will show movie reviews
+> Clicking the 'LOGIN' button if username and password are correct,it will show movie reviews
 ![][Popular]
->Shows popular movies by scrolling pictures. 
+> Shows popular movies by scrolling pictures. 
 ![][Search1]
->Shows search page
+> Shows search page
 ![][Search2]
->After typing keyword sherlock,the page shows relavant movies 
+> After typing keyword sherlock,the page shows relavant movies 
 
 ## Routing.
-
 
 + /movies/favorites (protected) - displays the user's favorite movies selection.
 + /reviews/:id (public) - displays the full text of a movie review.
 + /movies/search(public) - dispalys the user's movies search
 + /reviews/:username&password(protected) -displays the full text of moview reviews
 
-
 ### Data hyperlinking.
-
-
 ![][cardLink]
 > Clicking a card causes the display of that movie's details.
-
 ![][reviewLink]
->Clicking the 'Full Review' for a review extract will display the full text of the review
+> Clicking the 'Full Review' for a review extract will display the full text of the review
 
 ## Independent learning (If relevant).
 
@@ -118,3 +115,5 @@ List reference material links (articles/blogs).
 [Search1]: ./public/Search1.png
 [Search2]: ./public/Search2.png
 [Popular]: ./public/Popular.png
+[Homepage]: ./public/Homepage.png
+[Header]:./public/Header.png
