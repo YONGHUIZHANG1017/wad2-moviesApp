@@ -92,4 +92,11 @@ describe("Navigation", () => {
             cy.get("h2").contains("No. Movies");// TODO
         });
       });
+      describe("to search page", () => {
+        it("display search page ", () => {
+          cy.get("#root > div > nav > nav.navbar.navbar-expand > ul > li:nth-child(4) > a").click()
+          cy.wait(5000)
+          cy.url().should('include','/search')
+        });
+      })
     });
