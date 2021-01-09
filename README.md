@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Assignment 1 - ReactJS app.
 
 Name: Yonghui Zhang
@@ -117,3 +118,7 @@ List reference material links (articles/blogs).
 [Popular]: ./Readme/public/Popular.png
 [Homepage]: ./Readme/public/Homepage.png
 [Header]:./Readme/public/Header.png
+=======
+# wad2-moviesApp
+'Readme.md' is in the folder Readme
+>>>>>>> bbbcec25998332b450c418c0378e6828f210accd
