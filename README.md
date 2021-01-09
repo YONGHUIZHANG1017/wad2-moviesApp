@@ -105,15 +105,15 @@ List reference material links (articles/blogs).
 
 ---------------------------------
 
-[movieDetail]: ./public/movieDetail.png
-[review]: ./public/review.png
-[reviewLink]: ./public/reviewLink.png
-[cardLink]: ./public/cardLink.png
-[stories]: ./public/CATALOGUE.png
-[LOGIN1]: ./public/LOGIN1.png
-[LOGIN2]: ./public/LOGIN2.png
-[Search1]: ./public/Search1.png
-[Search2]: ./public/Search2.png
-[Popular]: ./public/Popular.png
-[Homepage]: ./public/Homepage.png
-[Header]:./public/Header.png
+[movieDetail]: ./Readme/public/movieDetail.png
+[review]: ./Readme/public/review.png
+[reviewLink]: ./Readme/public/reviewLink.png
+[cardLink]: ./Readme/public/cardLink.png
+[stories]: ./Readme/public/CATALOGUE.png
+[LOGIN1]: ./Readme/public/LOGIN1.png
+[LOGIN2]: ./Readme/public/LOGIN2.png
+[Search1]: ./Readme/public/Search1.png
+[Search2]: ./Readme/public/Search2.png
+[Popular]: ./Readme/public/Popular.png
+[Homepage]: ./Readme/public/Homepage.png
+[Header]:./Readme/public/Header.png
