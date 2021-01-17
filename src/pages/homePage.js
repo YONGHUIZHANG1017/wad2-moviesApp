@@ -7,9 +7,9 @@ import AddToFavoritesButton from '../components/buttons/addToFavorites'
 const MovieListPage = () => {
   const context = useContext(MoviesContext);
   console.log(context);
-  const movies = context.movies&&context.movies.filter((m) => {  // New
+  const movies = context.movies&&(context.movies.filter((m) => {  // eslint-disable-next-line
     return !("favorite" in m);
-  })||[];
+  })||[]);// eslint-disable-next-line
 
   return (
     <>
