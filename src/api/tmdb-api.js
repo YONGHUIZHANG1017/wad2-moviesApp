@@ -1,47 +1,46 @@
 export const getMovies = () => {
   return fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+    `/api/getMovies?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
   )
     .then(res => res.json())
-    .then(json => json.results);
+    .then(json => json);
 };
 
 export const getMovie = id => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    `/api/getMovie/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
   ).then(res => res.json());
 };
 
 export const getGenres = () => {
   return fetch(
-    "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-    process.env.REACT_APP_TMDB_KEY +
-    "&language=en-US"
-  )
+    "/movies/api/genres?api_key=" +process.env.REACT_APP_TMDB_KEY + "&language=en-US")
     .then(res => res.json())
     .then(json => json.genres);
 };
 export const getMovieReviews = id => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    `/api/MovieReviews/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
   )
     .then(res => res.json())
-    .then(json => json.results);
-};
+    .then(json => json);
+  }
+
 export const getUpcomingMovies = () => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    `/api/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
   )
     .then(res => res.json())
     .then(json => json.results);
 };
 export const getPopularMovies = () => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    `api/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
   )
     .then(res => res.json())
-    .then(json => json.results);
+    .then(json => json);
 };
+
 
 export const newToken = () => {
   return fetch(
@@ -89,8 +88,8 @@ export const login = (username, password) => {
 
 export const searchMovies = (query) => {
   return fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&query=${query}`
+    `api/Search?api_key=${process.env.REACT_APP_TMDB_KEY}&query=${query}`
   )
     .then(res => res.json())
-    .then(json => json.results || []);
+    .then(json => json || []);
 }

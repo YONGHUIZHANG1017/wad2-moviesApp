@@ -6,23 +6,24 @@ export const MoviesContext = createContext(null);
 const reducer = (state, action) => {
   switch (action.type) {
     case "add-favorite":
+      // console.log(state.upcoming);
       return {
         movies: state.movies.map((m) =>
           m.id === action.payload.movie.id ? { ...m, favorite: true } : m
         ),
-        upcoming: [...state.upcoming],
+        upcoming: [...state.upcoming||[]],
       };
     case "add-WatchList":
         return {
           movies: state.movies.map((m) =>
             m.id === action.payload.movie.id ? { ...m, WatchList: true } : m
           ),
-          upcoming: [...state.upcoming],
+          upcoming: [...state.upcoming]||[],
         };
     case "load":
-      return { movies: action.payload.movies, upcoming: [...state.upcoming] };
+      return { movies: action.payload.movies, upcoming: [...state.upcoming||[]] };
     case "load-upcoming":
-      return { upcoming: action.payload.movies, movies: [...state.movies] };
+      return { upcoming: action.payload.movies, movies: [...state.movies||[]] };
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -54,6 +55,7 @@ const MoviesContextProvider = (props) => {
 
   useEffect(() => {
     getMovies().then((movies) => {
+      console.log(movies)
       dispatch({ type: "load", payload: { movies } });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

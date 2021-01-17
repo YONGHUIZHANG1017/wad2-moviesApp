@@ -8,6 +8,7 @@ export default ({ movie }) => {
 
   useEffect(() => {
     getMovieReviews(movie.id).then(reviews => {
+      console.log(reviews);
       setReviews(reviews);
     });
   },)
