@@ -10,7 +10,7 @@ const reducer = (state, action) => {
         movies: state.movies.map((m) =>
           m.id === action.payload.movie.id ? { ...m, favorite: true } : m
         ),
-        upcoming: [...state.upcoming],
+        upcoming: [...state.upcoming||[]],
       };
     case "add-WatchList":
         return {
@@ -20,9 +20,9 @@ const reducer = (state, action) => {
           upcoming: [...state.upcoming],
         };
     case "load":
-      return { movies: action.payload.movies, upcoming: [...state.upcoming] };
+      return { movies: action.payload.movies, upcoming: [...state.upcoming||[]] };
     case "load-upcoming":
-      return { upcoming: action.payload.movies, movies: [...state.movies] };
+      return { upcoming: action.payload.movies, movies: [...state.movies||[]] };
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -30,7 +30,7 @@ const reducer = (state, action) => {
             ? { ...m, review: action.payload.review }
             : m
         ),
-        upcoming: [...state.upcoming],
+        upcoming: [...state.upcoming||[]],
       };
     default:
       return state;
